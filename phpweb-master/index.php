@@ -5,7 +5,7 @@ require 'config.php';
 //include nao da erro, tenta executar da mesma forma
 include 'Artigo.php';
 
-$artigo = new Artigo();
+$artigo = new Artigo($mysql);
 $artigos = $artigo->exibeTodos();
 ?>
 
