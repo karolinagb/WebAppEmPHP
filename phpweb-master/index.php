@@ -3,7 +3,7 @@
 //require da erro se o arquivo n tiver na pagina
 require 'config.php';
 //include nao da erro, tenta executar da mesma forma
-include 'Artigo.php';
+include 'src/Artigo.php';
 
 $artigo = new Artigo($mysql);
 $artigos = $artigo->exibeTodos();
@@ -26,7 +26,7 @@ $artigos = $artigo->exibeTodos();
             :
         ?>
             <h2>
-                <a href="<?php echo $artigo['link'] ?>">
+                <a href="artigo.php?id=<?php echo $artigo['id'];?>">
                     <?php echo $artigo['titulo'] ?>
                 </a>
             </h2>

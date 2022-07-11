@@ -1,20 +1,32 @@
 <?php
+require 'config.php';
+require 'src/Artigo.php';
 
-class Artigo
-{
-    private $mysql;
+$obj_artigo = new Artigo($mysql);
+$artigo = $obj_artigo->encontrarPorId($_GET['id']);
+?>
 
-    public function __construct(mysqli $mysql)
-    {
-        $this->mysql = $mysql;
-    }
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    public function exibeTodos(): array
-    {
-        $resultado = $this->mysql->query('SELECT * FROM artigos');
-        //retorna um tipo que o php entenda como um array associativo no caso do parâmetro MYSQLI_ASSOC
-        $artigos = $resultado->fetch_all(MYSQLI_ASSOC);
+<head>
+    <title>Meu Blog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-        return $artigos;
-    }
-}
+<body>
+    <div id="container">
+        <h1>
+            <?php echo $artigo['titulo']; ?>
+        </h1>
+        <p>
+            <?php echo $artigo['conteudo']; ?>  
+        </p>
+        <div>
+            <a class="botao botao-block" href="index.php">Voltar</a>
+        </div>
+    </div>
+</body>
+
+</html>
