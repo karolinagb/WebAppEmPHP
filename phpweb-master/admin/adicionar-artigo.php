@@ -11,6 +11,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     
     $artigo = new Artigo($mysql);
     $artigo->adicionar($_POST['titulo'], $_POST['conteudo']);
+
+    //redirecionar para um pagina
+    //temos que redirecionar para o get senao ele sempre carrega o post
+    header('Location: adicionar-artigo.php');
+
+    //Assim que redirecionar é importante que ele não carregue mais nenhuma requisição do post
+    //Para para a execução:
+    die();
 }
 
 ?>
