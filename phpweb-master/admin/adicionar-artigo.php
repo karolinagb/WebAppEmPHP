@@ -1,3 +1,20 @@
+<?php
+
+require '../config.php';
+require '../src/Artigo.php';
+
+//Botar esse codigo para executar so quando estivermos usando requisição post
+
+//Tem informações sobre o ambiente que o PHP está executando a requisição ou resposta
+// REQUEST_METHOD= vamos usar para verificar se a requisição é get ou post
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    
+    $artigo = new Artigo($mysql);
+    $artigo->adicionar($_POST['titulo'], $_POST['conteudo']);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,7 +27,7 @@
 <body>
     <div id="container">
         <h1>Adicionar Artigo</h1>
-        <form action="adicionar-artigo.html" method="post">
+        <form action="adicionar-artigo.php" method="post">
             <p>
                 <label for="">Digite o título do artigo</label>
                 <input class="campo-form" type="text" name="titulo" id="titulo" />

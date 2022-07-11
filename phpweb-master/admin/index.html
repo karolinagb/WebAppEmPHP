@@ -33,7 +33,7 @@
                 </nav>
             </div>
         </div>
-        <a class="botao botao-block" href="admin/adicionar-artigo.html">Adicionar Artigo</a>
+        <a class="botao botao-block" href="admin/adicionar-artigo.php">Adicionar Artigo</a>
     </div>
 </body>
 
