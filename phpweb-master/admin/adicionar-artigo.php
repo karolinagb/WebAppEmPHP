@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     //redirecionar para um pagina
     //temos que redirecionar para o get senao ele sempre carrega o post
-    header('Location: adicionar-artigo.php');
+    header('Location: /admin/index.php');
 
     //Assim que redirecionar é importante que ele não carregue mais nenhuma requisição do post
     //Para para a execução:
