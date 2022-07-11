@@ -2,6 +2,7 @@
 
 require '../config.php';
 require '../src/Artigo.php';
+require '../src/redireciona.php';
 
 //Botar esse codigo para executar so quando estivermos usando requisição post
 
@@ -12,13 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $artigo = new Artigo($mysql);
     $artigo->adicionar($_POST['titulo'], $_POST['conteudo']);
 
-    //redirecionar para um pagina
-    //temos que redirecionar para o get senao ele sempre carrega o post
-    header('Location: /admin/index.php');
-
-    //Assim que redirecionar é importante que ele não carregue mais nenhuma requisição do post
-    //Para para a execução:
-    die();
+    redireciona('/admin/index.php');
 }
 
 ?>

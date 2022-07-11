@@ -28,15 +28,15 @@ $artigos = $artigo->exibeTodos();
             <div id="artigo-admin">
                 <p> <?php echo $artigo['titulo']; ?> </p>
                 <nav>
-                    <a class="botao" href="admin/editar-artigo.html?id=<?php echo $artigo['id'];?>">Editar</a>
-                    <a class="botao" href="admin/excluir-artigo.html?id=<?php echo $artigo['id'];?>">Excluir</a>
+                    <a class="botao" href="editar-artigo.html?id=<?php echo $artigo['id'];?>">Editar</a>
+                    <a class="botao" href="excluir-artigo.php?id=<?php echo $artigo['id'];?>">Excluir</a>
                 </nav>
             </div>
 
             <?php }?>
            
         </div>
-        <a class="botao botao-block" href="admin/adicionar-artigo.php">Adicionar Artigo</a>
+        <a class="botao botao-block" href="adicionar-artigo.php">Adicionar Artigo</a>
     </div>
 </body>
 
